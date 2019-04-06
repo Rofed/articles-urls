@@ -11,7 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import java.time.LocalTime;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Component
@@ -42,7 +42,8 @@ public class ScheduledTasks {
                 article.setSource(source);
                 article.setDescription(message.getDescription());
                 article.setTitle(message.getTitle());
-                article.setTimeStamp(LocalTime.now());
+                article.setTimeStamp(LocalDateTime.now());
+                article.setLink(message.getLink());
                 articleRepository.save(article);
                 log.debug("Adding article : " + article.getTitle());
             }

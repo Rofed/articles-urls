@@ -5,11 +5,9 @@ import lombok.Setter;
 import org.hibernate.validator.constraints.URL;
 
 import javax.persistence.*;
-import java.time.LocalTime;
+import java.time.LocalDateTime;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
-import java.util.UUID;
 
 @Getter
 @Setter
@@ -25,5 +23,5 @@ public class Source {
     @OneToMany
     private Set<Article> articles = new HashSet<>();
 
-    private LocalTime timeStamp;
+    private LocalDateTime timeStamp;
 }

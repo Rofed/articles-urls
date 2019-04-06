@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 @Controller
@@ -22,7 +23,7 @@ public class SourceController {
     public void newSource( @RequestBody String sourceURL){
         Source source = new Source();
         source.setUrl(sourceURL);
-        source.setTimeStamp(LocalTime.now());
+        source.setTimeStamp(LocalDateTime.now());
         sourceRepository.save(source);
     }
 }
